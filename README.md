@@ -32,9 +32,3 @@ export AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
 
 * [Create Cluster](/docs/kops/cluster_create.md)
 * [Update Cluster](/docs/kops/cluster_update.md)
-
-
-```
-$ kubectl apply -f secrets/app.yml
-$ kubectl get secret app-secrets -o yaml # check
-```
