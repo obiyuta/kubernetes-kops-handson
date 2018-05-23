@@ -20,7 +20,7 @@ Register the NS record of created hosted zone to application's hosted zone as we
 
 |Name|Type|Value|
 |--|--|--|
-|example.jp.|NS|ns-xxx.awsdns-xx.co.uk. <br>ns-xxx.awsdns-xx.net.<br>ns-xxxx.awsdns-xx.org.<br>ns-xxx.awsdns-xx.com.|
+|k8s.example.jp.|NS|ns-xxx.awsdns-xx.co.uk. <br>ns-xxx.awsdns-xx.net.<br>ns-xxxx.awsdns-xx.org.<br>ns-xxx.awsdns-xx.com.|
 
 ### Hosted Zone / example.com
 
