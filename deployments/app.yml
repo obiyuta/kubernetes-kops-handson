@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: ruby:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+          - name: SECRET_ACCESS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: secret_access_token
+          - name: DATABASE_HOSTNAME
+            valueFrom:
+              secretKeyRef:
+                name: rds-credentials
+                key: host
+          - name: DATABASE_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: rds-credentials
+                key: username
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: rds-credentials
+                key: password
+      - name: nginx
+        image: nginx:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: backend-http

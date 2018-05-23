@@ -30,5 +30,14 @@ export AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
 
 ## Usage
 
+### kops
+
 * [Create Cluster](/docs/kops/cluster_create.md)
 * [Update Cluster](/docs/kops/cluster_update.md)
+
+### kubernetes
+
+* [Specify Context](/docs/kubernetes/context.md)
+* [Manage Secret Envars](/docs/kubernetes/secret.md)
+* [Manage Services](/docs/kubernetes/service.md)
+* [Deploy Containers](/docs/kubernetes/deployment.md)
