@@ -42,7 +42,13 @@ $ kops edit ig nodes
   machineType: t2.xlarge
 ```
 
-### Dry Run
+### Update cluster setting
+
+```
+$ kops update cluster
+```
+
+### Apply cluster setting
 
 ```
 $ kops rolling-update cluster

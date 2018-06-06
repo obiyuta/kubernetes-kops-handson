@@ -53,18 +53,7 @@ $ aws s3api put-bucket-versioning --bucket clusters.k8s.example.com --profile yo
 ※ Use this bucket as `KOPS_STATE_STORE`
 
 
-## kops: Create Cluster
-
-__Dry Run__
-
-```
-kops create cluster \
---name $NAME \
---zones ap-northeast-1a,ap-northeast-1c \
---state $KOPS_STATE_STORE \
-```
-
-__Apply__
+## kops: Create Cluster Configuration
 
 ```
 kops create cluster \
@@ -72,6 +61,12 @@ kops create cluster \
 --zones ap-northeast-1a,ap-northeast-1c \
 --state $KOPS_STATE_STORE \
 --yes
+```
+
+## Kops: Create Cluster
+
+```
+kops update cluster $NAME --yes
 ```
 
 __Check Cluster Status__
@@ -85,4 +80,10 @@ NAME                                               STATUS    ROLES     AGE      
 ip-xxx-xx-xx-xxx.ap-northeast-1.compute.internal   Ready     node      10s        v1.8.4
 ip-xxx-xx-xx-xxx.ap-northeast-1.compute.internal   Ready     master    10s       v1.8.4
 ip-xxx-xx-xx-xxx.ap-northeast-1.compute.internal   Ready     node      10s        v1.8.4
+```
+
+## Kips: Import Context
+
+```
+kops export kubecfg $NAME
 ```
